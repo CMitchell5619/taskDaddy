@@ -19,6 +19,11 @@
                 <div class="col-12">
                     <form onsubmit="app.listController.create(event)">
                         <div class="form-group">
+                            <div>
+                                <input type="color" id="color" name="color"
+                                       value="">
+                                <label for="head">Head</label>
+                            </div>
                             <input type="text" name="title" maxlength="15" minlength ="3" placeholder="Create a list, daddy...">
                             <button class="btn btn-light btn-outline-dark" type="submit">Create List</button>
                         </div>

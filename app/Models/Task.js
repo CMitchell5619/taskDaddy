@@ -11,8 +11,7 @@ export default class Task {
     get Template() {
         return /* html */`
     <li class="list-group-item bg-dark text-light">${this.title}<button type="button" class="text-light close"
-    onclick="app.taskController.delete('${this.id}')"><span>&times;</span></button><button type="button" class="text-light close"
-    onclick="app.taskController.delete('${this.id}')"><span>&check;</span></button></li>
+    onclick="app.taskController.delete('${this.id}')"><span>&times;</span></button><input class="text-light close" id="completed" type="checkbox"></li>
    `
     }
 

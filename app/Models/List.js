@@ -2,16 +2,18 @@ import { generateId } from "../Utils/GenerateId.js";
 import { ProxyState } from "../AppState.js";
 
 export default class List{
-    constructor({title, id = generateId(), completed}) {
+    constructor({title, id = generateId(), completed, color}) {
         this.title = title
         this.id = id
         this.completed = completed
+        this.color = color
+
     }
 
     get Template() {
         return /*html*/`
-        <div class="col-4 bg-dark">
-        <h5 class="text-light">${this.title}<button class="text-light close align-middle" onclick="app.listController.delete('${this.id}')"><span>&times;</span></button>
+        <div class="col-4" style="background-color: ${this.color}">
+        <h5 class="text-light">${this.title}<button class="text-light close align-middle onclick="app.listController.delete('${this.id}')"><span>&times;</span></button>
         </h5>
         <form onsubmit="app.taskController.create(event, '${this.id}')">
             <div class="form-group">

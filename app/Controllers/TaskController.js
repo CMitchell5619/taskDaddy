@@ -8,20 +8,14 @@ export default class TaskController{
     console.log("hello from the taskController");
   }
 
-  strike(event) {
-    event.preventDefault();
-    
-
-
-
-  }
+ 
 
   create(event, listId) {
     event.preventDefault()
       let form = event.target
       let newTask = {
         title: form.title.value,
-        listId: listId
+        listId: listId,
       }
   taskService.create(newTask)
   }

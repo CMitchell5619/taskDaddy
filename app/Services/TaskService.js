@@ -10,7 +10,11 @@
       ProxyState.on('tasks', saveState)
     }
     delete(taskId) {
-        ProxyState.tasks = ProxyState.tasks.filter(t => t.id != taskId)
+      let r = confirm("Press a button!");
+      if (r == true)
+           {
+            ProxyState.tasks = ProxyState.tasks.filter(t => t.id != taskId);
+          }
     }
     create(newTask) {
       ProxyState.tasks = [new Task(newTask), ...ProxyState.tasks];
